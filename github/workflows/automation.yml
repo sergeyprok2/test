@@ -31,4 +31,4 @@ jobs:
           push: true
           # С каким тегом будет загружен образ
           # Переменные тоже поддерживаются
-          tags: sergeyprok2/test-docker-push:latest
+          tags: sergeyprok/test-docker-push:latest
