@@ -464,34 +464,34 @@ async def novosti_requests(message: Message):
     else:
         await message.answer(text='не 200')
 
-@dp.message(Text(text='Новости sel'))
-async def novosti_selenium(message: Message):
-    await message.answer(text='Новости')
-    k = datetime.now().strftime('%d.%m.%y  %H:%M:%S')
-    print(k)
-    print(message.from_user.id)
-    await message.answer(text=k)
-    print(message.from_user.id)
-    # try:
-    options_chrome = webdriver.ChromeOptions()
-    # options_chrome.add_extension('coordinates.crx')
-    # zzz=options=options_chrome
-
-    options_chrome.add_argument('--headless=chrome')
-    with webdriver.Chrome(options=options_chrome) as browser:
-        await message.answer(text='1')
-        browser.get('https://dzen.ru/?clid=1946579&win=90&yredirect=true&utm_referer=sso.dzen.ru')
-        await message.answer(text='2')
-        checkbox = browser.find_element(By.CLASS_NAME, 'card-news__stories-Bu')   #
-
-        v.clear()   #  делает список пустым
-        g = [i.strip() for i in checkbox.text.split('\n')]   #  список заголовков новостей
-        n = [k.get_attribute('href') for k in checkbox.find_elements(By.TAG_NAME, 'a')]   #  список ссылок новостей
-        for y, u in zip(g, n):
-            # print(y, u)
-            v.append(u)   #  добавляет ссылки в список
-            # await message.answer(text=u)
-            await message.answer(text=y)
+# @dp.message(Text(text='Новости sel'))
+# async def novosti_selenium(message: Message):
+#     await message.answer(text='Новости')
+#     k = datetime.now().strftime('%d.%m.%y  %H:%M:%S')
+#     print(k)
+#     print(message.from_user.id)
+#     await message.answer(text=k)
+#     print(message.from_user.id)
+#     # try:
+#     options_chrome = webdriver.ChromeOptions()
+#     # options_chrome.add_extension('coordinates.crx')
+#     # zzz=options=options_chrome
+#
+#     options_chrome.add_argument('--headless=chrome')
+#     with webdriver.Chrome(options=options_chrome) as browser:
+#         await message.answer(text='1')
+#         browser.get('https://dzen.ru/?clid=1946579&win=90&yredirect=true&utm_referer=sso.dzen.ru')
+#         await message.answer(text='2')
+#         checkbox = browser.find_element(By.CLASS_NAME, 'card-news__stories-Bu')   #
+#
+#         v.clear()   #  делает список пустым
+#         g = [i.strip() for i in checkbox.text.split('\n')]   #  список заголовков новостей
+#         n = [k.get_attribute('href') for k in checkbox.find_elements(By.TAG_NAME, 'a')]   #  список ссылок новостей
+#         for y, u in zip(g, n):
+#             # print(y, u)
+#             v.append(u)   #  добавляет ссылки в список
+#             # await message.answer(text=u)
+#             await message.answer(text=y)
     # except:
     #     await message.answer(text='Что то пошло не так')
     #     print('Что то пошло не так')
