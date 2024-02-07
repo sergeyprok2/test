@@ -15,8 +15,8 @@ COPY vk_parser.py /app/vk_parser.py
 COPY cooc.py /app/cooc.py
 COPY config.py /app/config.py
 COPY bot.py /app/bot.py
-CMD ['echo', 'HELLO WORLD']
 CMD ["python", "-m", "bot"]
+COPY ggg.py /app/ggg.py
 CMD ["python", "-m", "vk_parser"]
 CMD ["python", "-m", "mma_parser"]
 #LABEL autor=rgg
