@@ -2,7 +2,7 @@ FROM python:3.11-slim-bullseye
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 WORKDIR /app
-COPY .env /app/.env
+#COPY .env /app/.env
 COPY requirements.txt .
 RUN apt update &&  \
     apt install -y libtiff5-dev libjpeg62-turbo-dev libopenjp2-7-dev zlib1g-dev \
