@@ -16,8 +16,8 @@ COPY cooc.py /app/cooc.py
 COPY config.py /app/config.py
 COPY bot.py /app/bot.py
 CMD ["python3.10", "-m", "bot"]
-CMD ["python", "-m", "vk_parser"]
-CMD ["python", "-m", "mma_parser"]
+CMD ["python3.10", "-m", "vk_parser"]
+CMD ["python3.10", "-m", "mma_parser"]
 #LABEL autor=rgg
 #RUN apt-get update
 #RUN apt-get install python
